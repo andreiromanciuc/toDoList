@@ -25,7 +25,7 @@ public class App
 
         List<Task> tasks = taskRepository.getTasks();
         System.out.println(tasks);
-        System.out.println(taskRepository.getTasks());
+
 
 //        UpdateTaskRequest updateTaskRequest = new UpdateTaskRequest();
 //        updateTaskRequest.setDone(true);
