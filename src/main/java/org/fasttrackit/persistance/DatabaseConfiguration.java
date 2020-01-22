@@ -11,6 +11,7 @@ public class DatabaseConfiguration {
 
     public static Connection getConnection() throws SQLException, IOException {
 
+
         InputStream dbProperties = DatabaseConfiguration.class.getClassLoader()
                 .getResourceAsStream("db.properties");
 
