@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class DatabaseConfiguration {
 
-    public static Connection getConnection() throws SQLException, IOException {
+    public static Connection getConnection() throws SQLException, IOException, ClassNotFoundException {
 
 
         InputStream dbProperties = DatabaseConfiguration.class.getClassLoader()
@@ -19,9 +19,12 @@ public class DatabaseConfiguration {
         try {
             Properties properties = new Properties();
 
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
             if (dbProperties != null) {
                 properties.load(dbProperties);
             }
+
 
             return DriverManager.getConnection(
                     properties.getProperty("url"),
